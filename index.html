@@ -131,12 +131,12 @@ We evaluate VLOGGER on three different benchmarks and show that the proposed mod
 <br />
 <br />
 
-<div>
+<div style='text-align: center'>
 <h2>How does VLOGGER work?</h2>
 <hr>
 
 <br />
-<img src="images/method.png" style="vertical-align: top; width: 100%;">
+<img src="images/method.png" style="vertical-align: top; width: 100%; max-width:1400px;">
 
 <p>
 Our goal is to generate a photorealistic video of variable length depicting a target human talking, including head and gestures. Our framework, which we call VLOGGER, is a two-stage pipeline based on stochastic diffusion models to model the one-tomany mapping from speech to video. The first network takes as input an audio waveform to generate intermediate body motion controls, which are responsible for gaze, facial expressions and pose over the target video length. 
@@ -489,7 +489,6 @@ Several examples on talking face generation given just a single input image and 
 </div>
 
 
-
 </div>
 <div>
 <h2>Diversity</h2>
@@ -516,7 +515,7 @@ The model is stochastic and generates different videos for the same input audio 
 One of the main applications of this model is on video translation. In this case, VLOGGER takes an existing video in a particular language, and edits the lip and face areas to be consistent with new audios, in other languages. See more details in the paper.
 </p>
 
-<div><video controls loop muted playsinline="true" src="videos/video_editing.mp4" width="100%"></video></div>
+<div><video controls loop muted playsinline="true" src="videos/video_editing.mp4" style="width:100%; max-width:4200px;"></video></div>
 
 </div>
 <div>
@@ -528,7 +527,7 @@ One of the main applications of this model is on video translation. In this case
 One of the main applications of this model is on video translation. In this case, VLOGGER takes an existing video in a particular language, and edits the lip and face areas to be consistent with new audios, in other languages. See more details in the paper.
 </p>
 
-<div><video controls loop muted playsinline="true" src="videos/video_translation_1.mp4" width="100%"></video></div>
+<div><video controls loop muted playsinline="true" src="videos/video_translation.mp4" style="width:100%; max-width:1400px;"></video></div>
 
 </div>
 
