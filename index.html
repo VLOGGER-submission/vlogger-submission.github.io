@@ -139,7 +139,7 @@ We evaluate VLOGGER on three different benchmarks and show that the proposed mod
 <img src="images/method.png" style="vertical-align: top; width: 100%; max-width:1400px;">
 
 <p>
-Our goal is to generate a photorealistic video of variable length depicting a target human talking, including head and gestures. Our framework, which we call VLOGGER, is a two-stage pipeline based on stochastic diffusion models to model the one-tomany mapping from speech to video. The first network takes as input an audio waveform to generate intermediate body motion controls, which are responsible for gaze, facial expressions and pose over the target video length. 
+Our goal is to generate a photorealistic video of variable length depicting a target human talking, including head and gestures. Our framework, which we call VLOGGER, is a two-stage pipeline based on stochastic diffusion models to model the one-to-many mapping from speech to video. The first network takes as input an audio waveform to generate intermediate body motion controls, which are responsible for gaze, facial expressions and pose over the target video length. 
 </p><p>
 The second network is a temporal image-to-image translation model that extends large image diffusion models, taking the predicted body controls to generate the corresponding frames. To condition the process to a particular identity, the network also takes a reference image of a person.
 </p>
@@ -496,8 +496,7 @@ Several examples on talking face generation given just a single input image and 
 <br />
 
 <p>
-The model generates a diverse distribution of videos giving the target speech and preserving the original identity of the person in the original input image. 
-The right-most part shows pixel diversity as obtained from generated 80 videos. The person moves head and body significantly (red means higher diversity in pixel color), while the background is kept fixed. Despite the diversity, all videos look realistic.
+The model generates a diverse distribution of videos of the original subject giving the target speech. The right-most part shows pixel diversity as obtained from 80 generated videos. The person moves head and body significantly (red means higher diversity in pixel color) while the background is kept fixed, and despite the diversity all videos look realistic.
 </p>
 
 <div width="100%"><video controls loop muted autoplay playsinline="true" src="videos/video_diversity_1.mp4" style="width:100%; max-width:1600px;"></video></div>
@@ -511,7 +510,7 @@ The right-most part shows pixel diversity as obtained from generated 80 videos. 
 <br />
 
 <p>
-One of the main applications of this model is on video translation. In this case, VLOGGER takes an existing video in a particular language, and edits the lip and face areas to be consistent with new audios, in other languages. See more details in the paper.
+One of the main applications of this model is on editing existing videos. In this case, VLOGGER takes an video and changes the expression of the subject by e.g. closing the mouth or the eyes. In practice, we leverage the flexibility of the diffusion model by inpainting image parts that should change, making the video edits consistent with the original unchanged pixels.
 </p>
 
 <div><video controls loop muted playsinline="true" src="videos/video_editing.mp4" style="width:100%; max-width:1200px;"></video></div>
@@ -523,7 +522,7 @@ One of the main applications of this model is on video translation. In this case
 <br />
 
 <p>
-One of the main applications of this model is on video translation. In this case, VLOGGER takes an existing video in a particular language, and edits the lip and face areas to be consistent with new audios, in other languages. See more details in the paper.
+One of the main applications of this model is on video translation. In this case, VLOGGER takes an existing video in a particular language, and edits the lip and face areas to be consistent with new audios, e.g. in Spanish.
 </p>
 
 <div><video controls loop muted playsinline="true" src="videos/video_translation.mp4" style="width:100%; max-width:640px;"></video></div>
