@@ -496,14 +496,13 @@ Several examples on talking face generation given just a single input image and 
 <br />
 
 <p>
-The model is stochastic and generates different videos for the same input audio and person, all of them being highly realistic and consistent with the input audio.
+The model generates a diverse distribution of videos giving the target speech and preserving the original identity of the person in the original input image. 
+The right-most part shows pixel diversity as obtained from generated 80 videos. The person moves head and body significantly (red means higher diversity in pixel color), while the background is kept fixed. Despite the diversity, all videos look realistic.
 </p>
 
-<!--<div width="100%"><video controls loop muted playsinline="true" src="videos/video_diversity_1.mp4"></video></div>
-<div width="100%"><video controls loop muted playsinline="true" src="videos/video_diversity_2.mp4"></video></div>
-<div width="100%"><video controls loop muted playsinline="true" src="videos/video_diversity_3.mp4"></video></div>
-<div width="100%"><video controls loop muted playsinline="true" src="videos/video_diversity_4.mp4"></video></div>
--->
+<div width="100%"><video controls loop muted playsinline="true" src="videos/video_diversity_1.mp4" style="width:100%; max-width:2000px;"></video></div>
+<div width="100%"><video controls loop muted playsinline="true" src="videos/video_diversity_2.mp4" style="width:100%; max-width:2000px;"></video></div>
+<div width="100%"><video controls loop muted playsinline="true" src="videos/video_diversity_3.mp4" style="width:100%; max-width:2000px;"></video></div>
 
 </div>
 <div style='text-align: center'>
@@ -527,7 +526,7 @@ One of the main applications of this model is on video translation. In this case
 One of the main applications of this model is on video translation. In this case, VLOGGER takes an existing video in a particular language, and edits the lip and face areas to be consistent with new audios, in other languages. See more details in the paper.
 </p>
 
-<div><video controls loop muted playsinline="true" src="videos/video_translation.mp4" style="width:100%; max-width:1000px;"></video></div>
+<div><video controls loop muted playsinline="true" src="videos/video_translation.mp4" style="width:100%; max-width:640px;"></video></div>
 
 </div>
 
