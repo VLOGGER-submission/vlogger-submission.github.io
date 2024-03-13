@@ -120,12 +120,12 @@
 <br />
 
 <p>
-We propose VLOGGER, a method for text and audio-driven talking human video generation from a single input image of a person, which builds on the success of recent generative diffusion models. Our method consists of 1) a stochastic human-to-3d-motion diffusion model, and 2) a novel diffusion based architecture that augments text-to-image models with both temporal and spatial controls. This approach enables the generation of high quality videos of variable length, that are easily controllable through high-level representations of human faces and bodies. In contrast to previous work, our method does not require training for each person, does not rely on face detection and cropping, generates the complete image (not just the face or the lips), and considers a broad spectrum of scenarios (e.g., visible torso or diverse subject identities) that are critical to correctly synthesize humans who communicate.
-</p>
+We propose VLOGGER, a method for audio-driven human video generation from a single input image of a person, which builds on the success of recent generative diffusion models. Our method consists of 1) a stochastic human-to-3d-motion diffusion model, and 2) a novel diffusion-based architecture that augments text-to-image models with both spatial and temporal controls. This supports the generation of high quality video of variable length, easily controllable through high-level representations of human faces and bodies. In contrast to previous work, our method does not require training for each person, does not rely on face detection and cropping, generates the complete image (not just the face or the lips), and considers a broad spectrum of scenarios (e.g., visible torso or diverse subject identities) that are critical to correctly synthesize humans who communicate. 
+We also curate MENTOR, a new and diverse dataset with 3d pose and expression annotations, one order of magnitude larger than previous ones (800,000 identities) and with dynamic gestures, on which we train and ablate our main technical contributions.
 <p>
-We evaluate VLOGGER on three different benchmarks and show that the proposed model surpasses other state-of-the-art methods in image quality, identity preservation and temporal consistency. We collect a new and diverse dataset MENTOR one order of magnitude bigger than previous ones (2,200 hours and 800,000 identities, and a test set of 120 hours and 4,000 identities) on which we train and ablate our main technical contributions. We report the performance of VLOGGER with respect to multiple diversity metrics, showing that our architectural choices benefit training a fair and unbiased model at scale.
+VLOGGER outperforms state-of-the-art methods in three public benchmarks, considering image quality, identity preservation and temporal consistency while also generating upper-body gestures. 
+We analyze the performance of VLOGGER with respect to multiple diversity metrics, showing that our architectural choices and the use of MENTOR benefit training a fair and unbiased model at scale. Finally we show applications in video editing and personalization.
 </p>
-
 
 
 <br />
@@ -152,10 +152,9 @@ The second network is a temporal image-to-image translation model that extends l
 <div style='text-align:center'>
 <h2>Talking Face Generation</h2>
 <hr>
-<br />
 
 <p>
-Several examples on talking face generation given just a single input image and a driving audio.
+Examples on talking face generation given just a single input image and a driving audio:
 </p>
 
 <div style="display: inline-block;text-align: center; margin:5px;">
@@ -488,12 +487,13 @@ Several examples on talking face generation given just a single input image and 
 </figure>
 </div>
 
-
 </div>
+
+<br />
+
 <div style='text-align: center'>
 <h2>Diversity</h2>
 <hr>
-<br />
 
 <p>
 The model generates a diverse distribution of videos of the original subject giving the target speech. The right-most part shows pixel diversity as obtained from 80 generated videos. The person moves head and body significantly (red means higher diversity in pixel color) while the background is kept fixed, and despite the diversity all videos look realistic.
@@ -502,27 +502,30 @@ The model generates a diverse distribution of videos of the original subject giv
 <div width="100%"><video controls loop muted autoplay playsinline="true" src="videos/video_diversity_1.mp4" style="width:100%; max-width:1600px;"></video></div>
 <div width="100%"><video controls loop muted autoplay playsinline="true" src="videos/video_diversity_2.mp4" style="width:100%; max-width:1600px;"></video></div>
 <div width="100%"><video controls loop muted autoplay playsinline="true" src="videos/video_diversity_3.mp4" style="width:100%; max-width:1600px;"></video></div>
-
 </div>
+
+<br />
+
 <div style='text-align: center'>
 <h2>Video Editing</h2>
 <hr>
-<br />
 
 <p>
-One of the main applications of this model is on editing existing videos. In this case, VLOGGER takes an video and changes the expression of the subject by e.g. closing the mouth or the eyes. In practice, we leverage the flexibility of the diffusion model by inpainting image parts that should change, making the video edits consistent with the original unchanged pixels.
+One of the main applications of this model is on editing existing videos. In this case, VLOGGER takes an video and changes the expression of the subject, for instance by closing the mouth or the eyes. In practice, we leverage the flexibility of the diffusion model by inpainting image parts that should change, making the video edits consistent with the original unchanged pixels.
 </p>
 
 <div><video controls loop muted playsinline="true" src="videos/video_editing.mp4" style="width:100%; max-width:1200px;"></video></div>
-
 </div>
+
+<br />
+
 <div style='text-align: center'>
 <h2>Video Translation</h2>
 <hr>
 <br />
 
 <p>
-One of the main applications of this model is on video translation. In this case, VLOGGER takes an existing video in a particular language, and edits the lip and face areas to be consistent with new audios, e.g. in Spanish.
+One of the main applications of this model is on video translation. In this case, VLOGGER takes an existing video in a particular language, and edits the lip and face areas to be consistent with new audios.
 </p>
 
 <div><video controls loop muted playsinline="true" src="videos/video_translation.mp4" style="width:100%; max-width:640px;"></video></div>
